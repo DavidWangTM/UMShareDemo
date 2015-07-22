@@ -140,5 +140,11 @@
     });
 }
 
+-(void)cancelLogin:(NSString *)snsName{
+    [[UMSocialDataService defaultDataService] requestUnOauthWithType:snsName completion:^(UMSocialResponseEntity *response) {
+        NSLog(@"unOauth response is %@",response);
+    }];
+}
+
 
 @end
